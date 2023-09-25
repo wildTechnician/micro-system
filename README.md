@@ -1,11 +1,7 @@
 <div align=center><img src="./packages/core/src/assets/images/logo.png" width="20%"></div>
 
-<div align=center>
-<img src="https://img.shields.io/badge/author-xj-green" alt="npm version" />
-<img src="https://img.shields.io/node/v/pnpm" alt="npm downloads" />
-<img src="https://img.shields.io/npm/types/qiankun" alt="build status" />
-</div>
 ![GitHub Repo stars](https://img.shields.io/github/stars/wildTechnician/micro-system)
+
 # <div align=center>**MicroPackages**</div>
 
 [wujie](https://wujie-micro.github.io/)微服务（Micro） [vite](https://cn.vitejs.dev/)脚手架（APP）[pnpm](https://www.pnpm.cn/)包管理器（MonoRepo）
