@@ -1,8 +1,11 @@
 <div align=center><img src="./packages/core/src/assets/images/logo.png" width="20%"></div>
 
-![GitHub Repo stars](https://img.shields.io/github/stars/wildTechnician/micro-system)
-
 # <div align=center>**MicroPackages**</div>
+
+![GitHub Repo stars](https://img.shields.io/github/stars/wildTechnician/micro-system)
+![](https://img.shields.io/badge/auth-xiaoju-red)
+
+## &#x2615;简介
 
 [wujie](https://wujie-micro.github.io/)微服务（Micro） [vite](https://cn.vitejs.dev/)脚手架（APP）[pnpm](https://www.pnpm.cn/)包管理器（MonoRepo）
 
