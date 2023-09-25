@@ -35,6 +35,7 @@ export async function permission(to: RouteLocationNormalized, from: RouteLocatio
     // 用户进入后台
     if (!usePermission.isInitRouters) {
       const initSuccess = await usePermission.initDynamicRoute(to.params?.path);
+
       if (!requiresAuth) {
         next({ path: to.path });
         return;

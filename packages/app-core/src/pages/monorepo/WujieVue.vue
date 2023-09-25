@@ -7,7 +7,6 @@
     :props="propsData"
     :load-error="errorPage"
     :exec="true"
-    :alive="true"
     :plugins="[
       EventTargetPlugin(),
       InstanceofPlugin(),

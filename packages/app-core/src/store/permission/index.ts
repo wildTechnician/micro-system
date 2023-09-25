@@ -70,7 +70,7 @@ export default defineStore('permission', {
         }
         return true;
       } catch (e) {
-        return false;
+        return Promise.reject(e);
       }
     },
 
