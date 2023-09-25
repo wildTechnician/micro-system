@@ -1,0 +1,57 @@
+@use 'element-plus/theme-chalk/el-input.css';
+
+@use 'element-plus/theme-chalk/el-input-number.css';
+
+@use 'element-plus/theme-chalk/el-button.css';
+
+@use 'element-plus/theme-chalk/el-empty.css';
+
+@use 'element-plus/theme-chalk/el-card.css';
+
+@use 'element-plus/theme-chalk/el-select.css';
+
+@use 'element-plus/theme-chalk/el-select-dropdown.css';
+
+@use 'element-plus/theme-chalk/el-popper.css';
+
+@use 'element-plus/theme-chalk/el-scrollbar.css';
+
+@use 'element-plus/theme-chalk/el-date-picker.css';
+
+@use 'element-plus/theme-chalk/el-upload.css';
+
+@use 'element-plus/theme-chalk/el-Link.css';
+
+@use 'element-plus/theme-chalk/el-Radio.css';
+
+@use 'element-plus/theme-chalk/el-tree-select.css';
+
+@use 'element-plus/theme-chalk/el-virtual-list.css';
+
+@use 'element-plus/theme-chalk/el-tree.css';
+
+@use 'quill/dist/quill.core.css';
+
+// @use 'element-plus/theme-chalk/el-calendar.css';
+// @use 'element-plus/theme-chalk/el-cascader.css';
+// @use 'element-plus/theme-chalk/el-date-picker.css';
+// @use 'element-plus/theme-chalk/el-radio-group.css';
+.el-select-dropdown__item {
+  font-size: var(--el-font-size-base);
+  padding: 0 32px 0 20px;
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--el-text-color-regular);
+  height: 34px;
+  line-height: 34px;
+  box-sizing: border-box;
+  cursor: pointer;
+  &:hover {
+    background-color: var(--el-fill-color-light);
+  }
+}
+.formily-element-plus-form-item-feedback-layout-loose {
+  margin-bottom: 5px;
+}

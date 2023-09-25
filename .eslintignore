@@ -1,0 +1,15 @@
+/package-lock.json
+/pnpm-lock.json
+
+/node_modules
+*/node_modules/
+
+/dist
+*/dist/
+
+.DS_Store
+
+*/assets
+
+# 自动导入
+auto-imports.d.ts

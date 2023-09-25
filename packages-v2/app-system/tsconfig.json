@@ -1,0 +1,13 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "~/*": ["/*"]
+    }
+  },
+  "include": ["vite.config.*", "src/**/*.ts", "src/**/*.d.ts", "src/**/*.jsx", "src/**/*.vue", "../utils-common/typings/**/*"],
+  // #TODO暂时过滤底代码校验
+  "exclude": ["dist", "test", "**/*.md", "node_modules", "../app-form-create", "./src/pages/LowCode"]
+}

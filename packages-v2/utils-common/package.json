@@ -1,0 +1,15 @@
+{
+  "name": "@packages/utils-common",
+  "version": "2.0.0",
+  "private": true,
+  "author": "xj",
+  "dependencies": {
+    "@packages/utils-icon": "workspace:^2.0.0",
+    "js-cookie": "^3.0.5",
+    "wujie": "^1.0.18",
+    "wujie-polyfill": "^1.0.0-alpha.2"
+  },
+  "devDependencies": {
+    "@types/js-cookie": "^3.0.3"
+  }
+}

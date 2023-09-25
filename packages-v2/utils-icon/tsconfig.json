@@ -1,0 +1,14 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "types": ["element-plus/global", "node"]
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  },
+  "include": ["src", "components", "build", "index.d.ts", "../utils-common/typings/**/*"],
+  "references": [{ "path": "../../tsconfig.node.json" }]
+}

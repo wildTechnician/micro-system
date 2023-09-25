@@ -1,0 +1,13 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "~/*": ["/*"]
+    },
+    "types": ["vue-cesium/global", "vue-cesium/Cesium", "element-plus/global"]
+  },
+  "include": ["src/**/*", "node_modules/vue-cesium/Cesium.d.ts", "node_modules/vue-cesium/global.d.ts", "../utils-common/typings/**/*"],
+  "exclude": ["dist", "test", "**/*.md", "node_modules"]
+}

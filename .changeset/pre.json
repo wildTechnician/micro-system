@@ -1,0 +1,14 @@
+{
+  "mode": "pre",
+  "tag": "beta",
+  "initialVersions": {
+    "@packages/app-core": "2.0.0",
+    "@packages/app-system": "2.0.0",
+    "@packages/app-visualizer": "2.0.0",
+    "@packages/utils-cesium": "2.0.0",
+    "@packages/utils-common": "2.0.0",
+    "@packages/utils-icon": "2.0.0",
+    "@packages/utils-mock": "2.0.0"
+  },
+  "changesets": []
+}

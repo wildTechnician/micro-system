@@ -1,0 +1,3 @@
+<template>
+  <DesignForm />
+</template>

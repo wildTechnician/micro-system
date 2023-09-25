@@ -1,0 +1,13 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "~/*": ["/*"]
+    },
+    "types": ["element-plus/global"]
+  },
+  "include": ["vite.config.*", "src/**/*.ts", "src/**/*.d.ts", "src/**/*.jsx", "src/**/*.vue", "../utils-common/typings/**/*"],
+  "exclude": ["dist", "test", "**/*.md", "node_modules"]
+}

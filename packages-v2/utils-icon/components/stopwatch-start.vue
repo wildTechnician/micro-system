@@ -1,0 +1,51 @@
+<template>
+  <svg
+    width="24"
+    height="24"
+    viewBox="0 0 48 48"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M24 44C33.3888 44 41 36.3888 41 27C41 17.6112 33.3888 10 24 10C14.6112 10 7 17.6112 7 27C7 36.3888 14.6112 44 24 44Z"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="4"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M18 4H30"
+      stroke="currentColor"
+      stroke-width="4"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M24 19V27"
+      stroke="currentColor"
+      stroke-width="4"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M32 27H24"
+      stroke="currentColor"
+      stroke-width="4"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M24 4V8"
+      stroke="currentColor"
+      stroke-width="4"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </svg>
+</template>
+<script lang="ts">
+import type { DefineComponent } from 'vue'
+export default {
+  name: 'stopwatchStart',
+} as DefineComponent
+</script>

@@ -1,0 +1,65 @@
+@mixin loadImage($url) {
+  background-image: url('@/assets/images' + $url);
+  @content;
+}
+
+@mixin afterLine($class, $color, $padding: 0.1rem) {
+  @if $padding > 0 {
+    #{$class}::after {
+      @include afterOrBeforeLine($color, $padding);
+    }
+  } @else {
+    #{$class} {
+      border-right: solid 1px $color;
+    }
+  }
+}
+
+@mixin centerElement($width: 100%, $height: 100%) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: $width;
+  height: $height;
+}
+
+@mixin beforeLine($class, $color, $padding: 0.1rem) {
+  @if $padding > 0 {
+    #{$class}::before {
+      @include afterOrBeforeLine($color, $padding);
+    }
+  } @else {
+    border-right: solid 1px $color;
+  }
+}
+
+@mixin afterOrBeforeLine($color, $padding) {
+  content: '';
+  display: inline-block;
+  width: 1px;
+  height: 100%;
+  background: $color;
+  vertical-align: middle;
+  margin: 0 $padding;
+}
+
+@mixin textEllipsis($line: 0) {
+  overflow: hidden;
+  @if ($line > 0) {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $line;
+  } @else {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+@function tovw($px) {
+  @return calc($px/1920) * 100vw;
+}
+
+@function tovh($px) {
+  @return calc($px/ 1080) * 100vh;
+}

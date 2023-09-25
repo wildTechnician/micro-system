@@ -1,0 +1,44 @@
+<template>
+  <svg
+    width="24"
+    height="24"
+    viewBox="0 0 48 48"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M4 30L9 6H39L44 30"
+      stroke="currentColor"
+      stroke-width="4"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M4 30H14.9091L16.7273 36H31.2727L33.0909 30H44V43H4V30Z"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="4"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M18 20L24 14L30 20"
+      stroke="currentColor"
+      stroke-width="4"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M24 26V14"
+      stroke="currentColor"
+      stroke-width="4"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </svg>
+</template>
+<script lang="ts">
+import type { DefineComponent } from 'vue'
+export default {
+  name: 'inboxOut',
+} as DefineComponent
+</script>

@@ -1,0 +1,19 @@
+{
+  "name": "@packages/app-core",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": {
+    "test": "vitest",
+    "test:cov": "vitest run --coverage",
+    "dev": "vite",
+    "dev-mock": "vite --mode mock",
+    "build:prod": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview"
+  },
+  "author": "xj",
+  "dependencies": {
+    "@packages/utils-common": "workspace:^2.0.0",
+    "@packages/utils-icon": "workspace:^2.0.0",
+    "vue-cropper": "^1.0.8"
+  }
+}

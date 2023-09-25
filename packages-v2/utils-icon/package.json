@@ -1,0 +1,14 @@
+{
+  "name": "@packages/utils-icon",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": {
+    "createIcon": "ts-node-esm ./build/iconGenerate.ts"
+  },
+  "author": "xj",
+  "devDependencies": {
+    "@types/prettier": "^2.7.2",
+    "fast-glob": "^3.2.12",
+    "ts-node": "^10.9.1"
+  }
+}

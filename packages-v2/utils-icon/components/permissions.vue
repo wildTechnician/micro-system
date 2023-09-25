@@ -1,0 +1,52 @@
+<template>
+  <svg
+    width="24"
+    height="24"
+    viewBox="0 0 48 48"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M20 10H6C4.89543 10 4 10.8954 4 12V38C4 39.1046 4.89543 40 6 40H42C43.1046 40 44 39.1046 44 38V35.5"
+      stroke="currentColor"
+      stroke-width="4"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M10 23H18"
+      stroke="currentColor"
+      stroke-width="4"
+      stroke-linecap="round"
+    />
+    <path
+      d="M10 31H34"
+      stroke="currentColor"
+      stroke-width="4"
+      stroke-linecap="round"
+    />
+    <circle
+      cx="34"
+      cy="16"
+      r="6"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="4"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M44 28.4187C42.0468 24.6023 37.9999 22 33.9999 22C29.9999 22 28.0071 23.1329 25.9502 25"
+      stroke="currentColor"
+      stroke-width="4"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </svg>
+</template>
+<script lang="ts">
+import type { DefineComponent } from 'vue'
+export default {
+  name: 'permissions',
+} as DefineComponent
+</script>

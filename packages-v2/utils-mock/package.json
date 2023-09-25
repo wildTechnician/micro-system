@@ -1,0 +1,12 @@
+{
+  "name": "@packages/utils-mock",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite"
+  },
+  "author": "xj",
+  "dependencies": {
+    "@packages/utils-common": "workspace:^2.0.0"
+  }
+}
