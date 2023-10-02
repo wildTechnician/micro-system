@@ -145,11 +145,11 @@ importers:
       '@packages/utils-icon': workspace:^2.0.0
       '@types/lodash-es': ^4.17.6
       kdbush: ^3.0.0
-      vue-cesium: ^3.1.4
+      vue-cesium: ^3.2.2
     dependencies:
       '@packages/utils-icon': link:../utils-icon
       kdbush: registry.npmmirror.com/kdbush/3.0.0
-      vue-cesium: registry.npmmirror.com/vue-cesium/3.1.4_@types+lodash-es@4.17.7
+      vue-cesium: registry.npmmirror.com/vue-cesium/3.2.2_@types+lodash-es@4.17.7
     devDependencies:
       '@types/lodash-es': registry.npmmirror.com/@types/lodash-es/4.17.7
 
@@ -1180,6 +1180,38 @@ packages:
     name: '@tsconfig/node16'
     version: 1.0.3
     dev: true
+
+  registry.npmmirror.com/@turf/circle/6.5.0:
+    resolution: {integrity: sha512-oU1+Kq9DgRnoSbWFHKnnUdTmtcRUMmHoV9DjTXu9vOLNV5OWtAAh1VZ+mzsioGGzoDNT/V5igbFOkMfBQc0B6A==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/circle/-/circle-6.5.0.tgz}
+    name: '@turf/circle'
+    version: 6.5.0
+    dependencies:
+      '@turf/destination': registry.npmmirror.com/@turf/destination/6.5.0
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/destination/6.5.0:
+    resolution: {integrity: sha512-4cnWQlNC8d1tItOz9B4pmJdWpXqS0vEvv65bI/Pj/genJnsL7evI0/Xw42RvEGROS481MPiU80xzvwxEvhQiMQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/destination/-/destination-6.5.0.tgz}
+    name: '@turf/destination'
+    version: 6.5.0
+    dependencies:
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+      '@turf/invariant': registry.npmmirror.com/@turf/invariant/6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/helpers/6.5.0:
+    resolution: {integrity: sha512-VbI1dV5bLFzohYYdgqwikdMVpe7pJ9X3E+dlr425wa2/sMJqYDhTO++ec38/pcPvPE6oD9WEEeU3Xu3gza+VPw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/helpers/-/helpers-6.5.0.tgz}
+    name: '@turf/helpers'
+    version: 6.5.0
+    dev: false
+
+  registry.npmmirror.com/@turf/invariant/6.5.0:
+    resolution: {integrity: sha512-Wv8PRNCtPD31UVbdJE/KVAWKe7l6US+lJItRR/HOEW3eh+U/JwRCSUl/KZ7bmjM/C+zLNoreM2TU6OoLACs4eg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@turf/invariant/-/invariant-6.5.0.tgz}
+    name: '@turf/invariant'
+    version: 6.5.0
+    dependencies:
+      '@turf/helpers': registry.npmmirror.com/@turf/helpers/6.5.0
+    dev: false
 
   registry.npmmirror.com/@types/chai-subset/1.3.3:
     resolution: {integrity: sha512-frBecisrNGz+F4T6bcc+NLeolfiojh5FxW2klu669+8BARtyQv2C/GkNW6FUodVe4BroGMP/wER/YDGc7rEllw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/chai-subset/-/chai-subset-1.3.3.tgz}
@@ -2360,6 +2392,12 @@ packages:
       array-ify: registry.npmmirror.com/array-ify/1.0.0
       dot-prop: registry.npmmirror.com/dot-prop/5.3.0
     dev: true
+
+  registry.npmmirror.com/compare-versions/5.0.3:
+    resolution: {integrity: sha512-4UZlZP8Z99MGEY+Ovg/uJxJuvoXuN4M6B3hKaiackiHrgzQFEe3diJi1mf1PNHbFujM7FvLrK2bpgIaImbtZ1A==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/compare-versions/-/compare-versions-5.0.3.tgz}
+    name: compare-versions
+    version: 5.0.3
+    dev: false
 
   registry.npmmirror.com/component-emitter/1.3.0:
     resolution: {integrity: sha512-Rd3se6QB+sO1TwqZjscQrurpEPIfO0/yYnSin6Q/rD3mOutHvUrCAhJub3r90uNb+SESBuE0QYoB90YdfatsRg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/component-emitter/-/component-emitter-1.3.0.tgz}
@@ -7403,18 +7441,21 @@ packages:
       - terser
     dev: true
 
-  registry.npmmirror.com/vue-cesium/3.1.4_@types+lodash-es@4.17.7:
-    resolution: {integrity: sha512-QXHiGw4RjznpBEYgsTnb0M5c/ws/sQ5mnhiNQIWbQa4fB1eN0brN7UQJvOEinDT8g1dAGr6pzhwhKhiMFfo6yg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/vue-cesium/-/vue-cesium-3.1.4.tgz}
-    id: registry.npmmirror.com/vue-cesium/3.1.4
+  registry.npmmirror.com/vue-cesium/3.2.2_@types+lodash-es@4.17.7:
+    resolution: {integrity: sha512-kgf7teBnxIR2jAYiIap9GRnKUzIKqBAceJ06gpPG2zYjzxsVUEY8XEj3eDc8yF0CdzQ9L8gpmQuNHYIox+5HAw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/vue-cesium/-/vue-cesium-3.2.2.tgz}
+    id: registry.npmmirror.com/vue-cesium/3.2.2
     name: vue-cesium
-    version: 3.1.4
+    version: 3.2.2
     peerDependencies:
-      vue: ^3.2.0
+      vue: ^3.2.47
     dependencies:
       '@amap/amap-jsapi-loader': registry.npmmirror.com/@amap/amap-jsapi-loader/1.0.1
+      '@turf/circle': registry.npmmirror.com/@turf/circle/6.5.0
       '@vue/shared': registry.npmmirror.com/@vue/shared/3.2.47
       '@zouyaoji/heatmap.js': registry.npmmirror.com/@zouyaoji/heatmap.js/2.0.8
+      compare-versions: registry.npmmirror.com/compare-versions/5.0.3
       echarts: registry.npmmirror.com/echarts/5.4.1
+      kdbush: registry.npmmirror.com/kdbush/3.0.0
       lodash: registry.npmmirror.com/lodash/4.17.21
       lodash-es: registry.npmmirror.com/lodash-es/4.17.21
       lodash-unified: registry.npmmirror.com/lodash-unified/1.0.3_tknf7errc3xdqocd3ryzzla7vq
