@@ -13,7 +13,7 @@
 <script setup lang="ts" name="attendanceIn">
 import { blockElement } from '@/components';
 import { useIcon } from '@packages/utils-common/hook';
-import treeTable from '@packages/utils-common/components/TreeTable/tableIndex.vue';
+// import treeTable from '@packages/utils-common/components/TreeTable/tableIndex.vue';
 const column = [
   { label: '', field: 'aa' },
   { label: '', slot: 'edit', with: '10px' },

@@ -7,11 +7,14 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    AnchorIndex: typeof import('./../../../utils-common/components/Anchor/anchorIndex.vue')['default']
+    AnchorItem: typeof import('./../../../utils-common/components/Anchor/components/anchorItem.vue')['default']
     App: typeof import('./../App.vue')['default']
     BlockElement: typeof import('./../components/blockElement/blockElement.vue')['default']
     BlockElementCenter: typeof import('./../components/blockElement/blockElementCenter.vue')['default']
     DashBoard: typeof import('./../pages/DashBoard.vue')['default']
     EchartsBlockElement: typeof import('./../components/blockElement/echartsBlockElement.vue')['default']
+    EchartsIndex: typeof import('./../../../utils-common/components/Echarts/echartsIndex.vue')['default']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElCarousel: typeof import('element-plus/es')['ElCarousel']
     ElCarouselItem: typeof import('element-plus/es')['ElCarouselItem']
@@ -28,11 +31,20 @@ declare module '@vue/runtime-core' {
     ElTable: typeof import('element-plus/es')['ElTable']
     ElTableColumn: typeof import('element-plus/es')['ElTableColumn']
     ErrorNetwork: typeof import('./../../node_modules/common/pages/error/errorNetwork.vue')['default']
+    ErrorPage: typeof import('./../../../utils-common/components/Error/errorPage.vue')['default']
     ErrorServer: typeof import('./../../node_modules/common/pages/error/errorServer.vue')['default']
+    ForbiddenPage: typeof import('./../../../utils-common/components/Error/forbiddenPage.vue')['default']
     HeaderComponent: typeof import('./../components/Header/headerComponent.vue')['default']
     IconBlockElement: typeof import('./../components/blockElement/iconBlockElement.vue')['default']
     LoginIndex: typeof import('./../pages/Login/LoginIndex.vue')['default']
+    OrganiseItem: typeof import('./../../../utils-common/components/SelectOrganize/components/OrganiseItem.vue')['default']
+    RectangleLoading: typeof import('./../../../utils-common/components/Loading/rectangleLoading.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SelectOrganizeIndex: typeof import('./../../../utils-common/components/SelectOrganize/SelectOrganizeIndex.vue')['default']
+    SpaceIndex: typeof import('./../../../utils-common/components/Space/spaceIndex.vue')['default']
+    TreeTable: typeof import('./../../../utils-common/components/TreeTable/TreeTable.vue')['default']
+    TreeTableCard: typeof import('./../../../utils-common/components/TreeTable/treeTableCard.vue')['default']
+    WujieVue: typeof import('./../../../utils-common/components/Monorepo/WujieVue.vue')['default']
   }
 }

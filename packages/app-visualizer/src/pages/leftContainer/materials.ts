@@ -7,7 +7,7 @@ import { useAsync } from '@packages/utils-common/hook';
 export default defineComponent({
   name: 'MaterialsContainer',
   async setup() {
-    const { state, execute } = useAsync(getPieList('/charts/pie', {}));
+    const { state, execute } = useAsync(getPieList({}));
 
     const allOptions = computed(() => {
       return toolOption({

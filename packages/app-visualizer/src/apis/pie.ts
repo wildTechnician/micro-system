@@ -6,4 +6,4 @@ export type PieResponseType = {
   data: { id: number; name: string; data: number }[];
 };
 
-export const getPieList = (url: string, data: PieRequestType) => post<PieRequestType, PieResponseType>(url, data);
+export const getPieList = (data: PieRequestType) => post<PieRequestType, PieResponseType>('/charts/pie', data);
