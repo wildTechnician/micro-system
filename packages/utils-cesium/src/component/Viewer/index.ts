@@ -10,14 +10,6 @@ type CESIUM = typeof Cesium;
 export default defineComponent({
   name: 'ViewerIndex',
   setup(props, { slots }) {
-    const layerBase = ref<any>();
-
-    const setImageLayer = (Cesium: CESIUM) => {
-      layerBase.value = new Cesium.UrlTemplateImageryProvider({
-        url: '/map/resources/gdyxt/{z}/{x}/{y}.png',
-      });
-    };
-
     const containerLoad = ({ viewer }: { viewer: Cesium.Viewer }) => {
       const scene = viewer.scene;
       const globe = scene.globe;
@@ -26,7 +18,7 @@ export default defineComponent({
       globe.showSkirts = false;
       globe.backFaceCulling = false;
       // globe.baseColor = new Cesium.Color(0.0, 0.0, 0.0, 0.0);
-      scene.backgroundColor = new Cesium.Color(0.0, 0.0, 0.0, 0.0);
+      scene.backgroundColor = new Cesium.Color(0.0, 0.0, 0.0, 1.0);
 
       /**
        * 显示画面模糊,锯齿明显问题
@@ -75,7 +67,7 @@ export default defineComponent({
 
       return h(
         VcConfigProvider,
-        { cesiumPath: '/map/resources/static/Cesium/Cesium.js' },
+        { cesiumPath: 'https://unpkg.com/cesium@1.108.0/Build/Cesium/Cesium.js' },
         {
           default: () =>
             h(
@@ -90,9 +82,7 @@ export default defineComponent({
                 skeleton: false as any,
                 orderIndependentTranslucency: false,
                 style: { position: 'relative', height: '100%' },
-                imageryProvider: layerBase.value,
                 onReady: containerLoad,
-                onCesiumReady: setImageLayer,
               },
               { default: () => children }
             ),
