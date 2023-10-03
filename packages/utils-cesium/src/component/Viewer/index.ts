@@ -3,7 +3,6 @@ import { VcViewer, VcStatusBar, VcConfigProvider } from 'vue-cesium';
 import { ref, defineComponent, h } from 'vue';
 
 import type { VNode } from 'vue';
-import type { VcSkeletonProps } from 'vue-cesium';
 
 type CESIUM = typeof Cesium;
 
