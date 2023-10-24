@@ -36,7 +36,6 @@ a {
   min-height: $core-height;
   min-width: 1080px;
   &-container {
-    background-image: url('@/assets/images/main/top.png');
     background-repeat: no-repeat;
     background-position: tovw(-570) tovh(10);
     background-size: 93%;
