@@ -1,7 +1,5 @@
 import { getWindows } from '../utils';
-/**
- * 不同微应用框架取window对象方式不同
- */
+
 const baseSize: number = 16;
 const win = getWindows();
 const remHandle = () => {
