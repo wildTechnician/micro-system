@@ -59,37 +59,7 @@ function changeMenu(index: string, indexPath: string[]) {
   height: 100%;
 }
 
-:deep(.el-sub-menu__title:not(.is-disabled):hover) {
-  background-color: var(--el-menu-hover-bg-color) !important;
-}
-
-.menuStyle {
-  --el-menu-text-color: #fff;
-  --el-menu-hover-text-color: #fff;
-  --el-menu-hover-bg-color: var(--el-color-primary);
-}
-.el-menu--horizontal {
-  border: 0;
-}
-:global(.removeStyle) {
-  border: none !important;
-}
-
-.removeStyle {
-  :global(.el-menu) {
-    background-color: var(--el-color-primary);
-  }
-  :global(.el-sub-menu__title) {
-    background-color: transparent !important;
-  }
-
-  :global(.el-menu-item) {
-    background-color: transparent !important;
-    color: #fff !important;
-  }
-  :global(.el-menu-item:not(.is-disabled):hover) {
-    background-color: var(--el-menu-hover-bg-color) !important;
-    // color: var(--el-menu-text-color) !important;
-  }
+.el-menu--horizontal.el-menu {
+  border: none;
 }
 </style>

@@ -28,17 +28,6 @@
       <el-col :span="10"><el-button class="login-form-item" :loading="loginLoading" @click.stop="reset">重置</el-button></el-col>
     </el-row>
   </el-row>
-
-  <el-row class="davido-copy" align="middle" justify="center">
-    <el-col :span="10">
-      技术支持:<a href="http://www.sxdvd.cn" target="_blank"><el-text type="primary">陕西达维多数据服务有限公司</el-text></a></el-col
-    >
-    <el-col :span="4">
-      当前版本:<a href="#"
-        ><el-text type="primary">{{ version }}</el-text></a
-      ></el-col
-    >
-  </el-row>
 </template>
 
 <script lang="ts" setup>
@@ -47,13 +36,12 @@ import { useRouter } from 'vue-router';
 import { WarningFilled, UserFilled } from '@packages/utils-icon/src/elementPlus';
 import { isEmpty } from '../../utils';
 import { useCookies, useAsync } from '../../hook';
-import { version } from '../../../../package.json';
 import { Essential } from '../../enum';
 import { shallowReactive, computed } from 'vue';
 
 import type { LoginRequestType } from '../../apis/permission';
 
-const initData = (): LoginRequestType => ({ username: 'admin', password: 'davido_admin@2023' });
+const initData = (): LoginRequestType => ({ username: 'admin', password: 'admin' });
 const router = useRouter();
 const appTitle = import.meta.env.VITE_APP_TITLE;
 const form = shallowReactive<LoginRequestType>(initData());
