@@ -9,7 +9,6 @@ export const useMonorepo = (handle: any) => {
   const route = useRoute();
   const usePermission = userPermissionStore();
   const useProfile = useProfileStore();
-  const propsData = shallowReactive(props);
   const currentApp = shallowReactive({
     name: '',
     path: '',
@@ -32,12 +31,16 @@ export const useMonorepo = (handle: any) => {
     }
   };
 
-  propsData.jumpTo = (path: string) => {
-    router.push({ name: `wujieVue`, params: { path: path || '/' } });
-  };
-  propsData.currentRouter = usePermission.childrenRouters;
-  propsData.user = useProfile.userInfo;
-  propsData.Auth = useProfile.Auth;
+  const propsData = computed<typeof props>(() => {
+    return {
+      jumpTo: (path: string) => {
+        router.push({ name: `wujieVue`, params: { path: path || '/' } });
+      },
+      currentRouter: usePermission.childrenRouters,
+      user: useProfile.userInfo,
+      Auth: useProfile.Auth,
+    };
+  });
 
   jump(route.params.path as string);
 
