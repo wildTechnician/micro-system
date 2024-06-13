@@ -35,14 +35,13 @@
     "vite-plugin-eslint": "^1.8.1",
     "vite-plugin-mock": "^2.9.6",
     "vite-plugin-vue-setup-extend": "^0.4.0",
-    "vitest": "^0.32.2",
-    "vue-tsc": "^1.2.0"
+    "vitest": "^0.32.2"
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.1.0",
     "axios": "^0.26.1",
     "echarts": "^5.4.1",
-    "element-plus": "^2.3.3",
+    "element-plus": "^2.7.5",
     "nprogress": "^0.2.0",
     "pinia": "^2.0.33",
     "qs": "^6.11.1",
