@@ -194,6 +194,15 @@ importers:
         specifier: workspace:^2.0.0
         version: link:../utils-icon
 
+  packages/cesium-playground:
+    dependencies:
+      '@packages/utils-cesium':
+        specifier: workspace:^2.0.0
+        version: link:../utils-cesium
+      '@packages/utils-common':
+        specifier: workspace:^2.0.0
+        version: link:../utils-common
+
   packages/utils-cesium:
     dependencies:
       '@packages/utils-icon':

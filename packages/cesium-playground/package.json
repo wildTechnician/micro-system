@@ -1,0 +1,16 @@
+{
+  "name": "@playgrounds/cesium",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite --debug",
+    "dev-mock": "vite --mode mock",
+    "build:prod": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview"
+  },
+  "author": "xj",
+  "dependencies": {
+    "@packages/utils-cesium": "workspace:^2.0.0",
+    "@packages/utils-common": "workspace:^2.0.0"
+  }
+}

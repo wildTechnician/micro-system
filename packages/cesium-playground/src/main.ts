@@ -1,0 +1,16 @@
+import Router from '@/router/RouterIndex';
+import Store from '@/store/storeIndex';
+import App from './App.vue';
+
+import { startApp } from '@packages/utils-common/enter';
+
+import '@/styles/common.scss';
+
+import '@packages/utils-common/enter/rem';
+
+startApp(App, Router, Store)
+  ?.then(async (res) => {})
+  .catch((e) => {
+    (document.getElementById('app') as Element).innerHTML = `<p style="display:flex;justify-content: center;
+    align-items: center;height:100%;background:#000;color:#fff;font-size:30px;">${e}</p>`;
+  });
