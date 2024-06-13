@@ -100,7 +100,7 @@ const changeType = () => {
 const initData = () => {
   onFieldInit('parentId', async (field) => {
     const res = await getMenuList({});
-    const source: any = [{ name: '顶级目录', id: '0', children: res || [] }];
+    const source: any = [{ title: '顶级目录', id: '0', children: res.records || [] }];
     (field as IField).setDataSource(source);
   });
 };

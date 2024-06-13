@@ -52,8 +52,8 @@ const column: ColumnType[] = [
   { label: '发布日期', field: 'releaseTime' },
   { label: '发布内容', field: 'content' },
   { label: '发布范围', field: 'scope' },
-  { label: '更新时间', field: 'lastModifiedTime', width: '200%' },
-  { label: '更新人', field: 'editorNickName' },
+  { label: '更新时间', field: 'updateTime', width: '200%' },
+  { label: '更新人', field: 'updateBy' },
   { label: '操作', slot: 'edit', width: '300', fixed: 'right' },
 ];
 
@@ -64,7 +64,7 @@ const tableHandle = useTable<NoticeRequestType, NoticeResponseType>({
   requestData: requestPage,
   pagination: { pageSize: 10, current: 1, props: { currentKey: 'pageNo' } },
   autoRequest: true,
-  api: '/admin/notice/page',
+  api: '/system/notice',
 });
 
 const { loading, doRequest } = tableHandle;

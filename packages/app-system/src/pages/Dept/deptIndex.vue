@@ -85,8 +85,8 @@ const column: ColumnType[] = [
   { label: '名称', field: 'name', align: 'left', fixed: 'left' },
   { label: '负责人', field: 'leader', fixed: 'left' },
   { label: '状态', slot: 'enabled' },
-  { label: '更新人', field: 'editorNickName' },
-  { label: '更新时间', field: 'lastModifiedTime', width: '180' },
+  { label: '更新人', field: 'updateBy' },
+  { label: '更新时间', field: 'updateTime', width: '180' },
   { label: '操作', slot: 'edit', width: '350', fixed: 'right' },
 ];
 
@@ -97,7 +97,7 @@ const tableHandle = useTable<DeptRequestType, DeptResponseType>({
   requestData: requestPage,
   pagination: { pageSize: 10, current: 1, show: false },
   autoRequest: true,
-  api: 'admin/dept/list',
+  api: '/system/dept',
 });
 
 const { loading, doRequest } = tableHandle;

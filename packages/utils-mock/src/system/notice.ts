@@ -3,7 +3,7 @@ import { NetState, NetStateMsg } from '@packages/utils-common/enum/index';
 
 export default [
   {
-    url: '/system/user',
+    url: '/system/notice',
     method: 'post',
     response: () => {
       return {
@@ -13,15 +13,14 @@ export default [
           // 系统管理
           'records|0-10': [
             {
-              nickname: '@cname()',
-              username: '@first()',
-              sex: '@natural(0,1)',
-              dept: '@string()',
-              email: '@string()',
-              phone: '@string()',
-              enabled: '@boolean()',
-              updateBy: '@cname()',
+              title: '@string(1,8)',
+              id: '@guid()',
+              scope: '全员',
+              content: 'cparagraph(5,15)',
+              releaseTime: "@datetime('yyyy-MM-dd HH:mm:ss')",
               updateTime: "@datetime('yyyy-MM-dd HH:mm:ss')",
+              updateBy: '@cname()',
+              isDefault: '@boolean()',
             },
           ],
           total: 3,

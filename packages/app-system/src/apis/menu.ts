@@ -53,7 +53,7 @@ export type MenuResponseType = {
 
 export type MenuOperateType = Omit<MenuResponseType, 'id' | 'createTime' | 'lastModifiedTime' | 'creatorName' | 'creatorNickName' | 'editorName' | 'editorNickName' | 'children'> & { id?: string };
 
-export const getMenuList = (data: MenuRequestType) => post<MenuRequestType, MenuResponseType>('/admin/menu/list', data);
+export const getMenuList = (data: MenuRequestType) => post<MenuRequestType, MenuResponseType>('/system/menu', data);
 export const addMenu = (data: MenuOperateType) => post<MenuOperateType, Server.responseOK>('/admin/menu', data);
 export const updateMenu = (data: MenuOperateType) => put<MenuOperateType, Server.responseOK>('/admin/menu', data);
 export const delMenu = (data: string) => del<{}, Server.responseOK>(`/admin/menu?menuId=${data}`, {});

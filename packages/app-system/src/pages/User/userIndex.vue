@@ -62,12 +62,12 @@ const column: ColumnType[] = [
   { label: '姓名', slot: 'nickname', fixed: 'left', align: 'left' },
   { label: '登陆账号', field: 'username' },
   { label: '性别', slot: 'sex' },
-  { label: '部门', field: 'deptName' },
+  { label: '部门', field: 'dept' },
   { label: '角色', field: 'roleName' },
   { label: '邮箱', field: 'email' },
   { label: '手机号', field: 'phone' },
-  { label: '更新时间', field: 'lastModifiedTime', width: '200%' },
-  { label: '更新人', field: 'editorNickName' },
+  { label: '更新时间', field: 'updateTime', width: '200%' },
+  { label: '更新人', field: 'updateBy' },
   { label: '状态', slot: 'enabled', width: '80' },
   { label: '操作', slot: 'edit', width: '280', fixed: 'right' },
 ];
@@ -79,7 +79,7 @@ const tableHandle = useTable<UserRequestType, UserResponseType>({
   requestData: requestPage,
   pagination: { pageSize: 10, current: 1, props: { currentKey: 'pageNo' } },
   autoRequest: true,
-  api: '/admin/user/page',
+  api: '/system/user',
 });
 
 const { loading, doRequest } = tableHandle;

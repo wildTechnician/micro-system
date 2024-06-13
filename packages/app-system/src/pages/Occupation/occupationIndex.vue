@@ -50,8 +50,8 @@ const modalData = shallowRef<OccupationResponseType | undefined>(undefined);
 const column: ColumnType[] = [
   { label: '名称', field: 'name', width: '150', fixed: 'left' },
   { label: '描述', field: 'description' },
-  { label: '更新时间', field: 'lastModifiedTime', width: '200%' },
-  { label: '更新人', field: 'editorNickName' },
+  { label: '更新时间', field: 'updateTime', width: '200%' },
+  { label: '更新人', field: 'updateBy' },
   { label: '操作', slot: 'edit', width: '250', fixed: 'right' },
 ];
 
@@ -67,7 +67,7 @@ const tableHandle = useTable<OccupationRequestType, OccupationResponseType>({
   requestData: requestPage,
   pagination: { pageSize: 10, current: 1, props: { currentKey: 'pageNo' } },
   autoRequest: true,
-  api: '/admin/post/page',
+  api: '/system/occupation',
 });
 
 const { loading, doRequest } = tableHandle;

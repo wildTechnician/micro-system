@@ -5,7 +5,7 @@
       <form-provider :form="forms">
         <form-layout layout="vertical" wrapper-align="left" :colon="false">
           <void-field name="grid" :component="[FormGrid, { maxColumns: 2, minColumns: 1 }]">
-            <el-tabs v-model="tabActive" v-loading="accessLoading" :stretch="true">
+            <el-tabs v-model="tabActive" :stretch="true">
               <el-tab-pane label="网站PC端" name="pc">
                 <field
                   v-for="(item, index) in accessPC"
@@ -59,7 +59,7 @@ import type { DeptRequestType, DeptResponseType } from '@/apis/dept';
 
 import { MenuType } from '@packages/utils-common/enum/menuType';
 import { accessPC, accessAPP } from './roleFromData';
-import { getMenuList, getDeptList, getRoleAccess, setRoleAccess } from '@/apis/';
+import { getMenuList, getDeptList, setRoleAccess } from '@/apis/';
 import { useAsync } from '@packages/utils-common/hook';
 import { createForm, onFieldChange, onFieldInit, onFieldValueChange } from '@packages/utils-form/core';
 import { FormProvider, Field, VoidField } from '@packages/utils-form/vue';
@@ -84,9 +84,8 @@ const tabActive = shallowRef<'pc' | 'app'>('pc');
 const formData = shallowReactive<RoleAccessType>(modalData());
 const { state: menuState, execute: menuExecute, error: menuError } = useAsync<MenuRequestType, MenuResponseType>(() => getMenuList({}));
 const { state: deptState, execute: deptExecute, error: deptError } = useAsync<DeptRequestType, DeptResponseType>(() => getDeptList({}));
-const { state: accessState, execute: accessExecute, error: accessError, loading: accessLoading } = useAsync<string, RoleAccessType>((id) => getRoleAccess(id));
 const { execute: setAccessExecute, error: setAccessError } = useAsync<RoleAccessType, Server.responseOK>((value) => setRoleAccess(value));
-const requestError = computed(() => setAccessError.value || accessError.value || deptError.value || menuError.value);
+const requestError = computed(() => setAccessError.value || deptError.value || menuError.value);
 
 // 菜单过滤
 const menuFilter = (menuData: MenuResponseType[], keys: string[]) => {
@@ -107,7 +106,7 @@ const menuFilter = (menuData: MenuResponseType[], keys: string[]) => {
 const initData = () => {
   // 初始化菜单
   onFieldInit('menuIds', async (field) => {
-    (field as IField).setDataSource(menuState.value);
+    (field as IField).setDataSource(menuState.value.records || []);
   });
   //初始化部门
   onFieldInit('deptIds', async (field) => {
@@ -126,7 +125,7 @@ const changeData = async () => {
   // 菜单权限
   onFieldValueChange('menuIds', (field) => {
     forms.setFieldState('homeMenuId', (state) => {
-      (state as IField).setDataSource(menuFilter(menuState.value, field.value));
+      (state as IField).setDataSource(menuFilter(menuState.value.records || [], field.value));
       (state as IField).setValue('');
     });
   });
@@ -175,14 +174,5 @@ const coverData = (data: Partial<RoleAccessType>, isReset: boolean = false) => {
   }
   forms.setValues(formData);
 };
-
-watch(
-  () => props.data,
-  () => {
-    accessExecute(props.data?.id as string).then(() => {
-      coverData(accessState.value || modalData(), true);
-      forms.setValuesIn('homeMenuId', accessState.value ? accessState.value.homeMenuId : '');
-    });
-  }
-);
+forms.setValuesIn('homeMenuId', '');
 </script>

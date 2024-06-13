@@ -11,7 +11,7 @@ export const accessPC = [
   {
     name: 'menuIds',
     title: '菜单权限',
-    component: [Tree, { showCheckbox: true, nodeKey: 'id', props: { label: 'name' } }],
+    component: [Tree, { showCheckbox: true, nodeKey: 'id', props: { label: 'title' } }],
     decorator: [FormItem, { gridSpan: 'span 2' }],
     initialValue: [],
   },

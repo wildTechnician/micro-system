@@ -3,7 +3,7 @@
     <el-alert v-show="requestError" :title="(requestError as string)" type="error" :closable="false" />
     <el-scrollbar max-height="50vh">
       <form-provider :form="forms">
-        <el-alert v-show="!props.data" :title="`所有新增后的用户默认密码为 ${getDefaultPassState}`" type="warning" show-icon />
+        <el-alert v-show="!props.data" :title="`所有新增后的用户默认密码为 admin`" type="warning" show-icon />
         <form-layout layout="vertical" wrapper-align="left" :colon="false">
           <void-field name="grid" :component="[FormGrid, { maxColumns: 2, minColumns: 1 }]">
             <field
@@ -35,7 +35,7 @@ import { fromData } from './userFromData';
 import { createForm, onFieldReact } from '@packages/utils-form/core';
 import { FormProvider, Field, VoidField } from '@packages/utils-form/vue';
 import { FormLayout, FormGrid } from '@packages/utils-form/elementPlus';
-import { addUser, updateUser, getDeptList, getOccupationList, getRoleList, getDefaultPass } from '@/apis';
+import { addUser, updateUser, getDeptList, getOccupationList, getRoleList } from '@/apis';
 import { useAsync } from '@packages/utils-common/hook';
 
 import type { UserResponseType, UserOperateType, DeptRequestType, OccupationRequestType, RoleRequestType } from '@/apis';
@@ -66,7 +66,6 @@ const { execute: updateUserExecute, error: updateUserError } = useAsync((value) 
 const { execute: getRoleListExecute, error: getRoleListError, state: getRoleListState } = useAsync((value: RoleRequestType) => getRoleList(value));
 const { execute: getOccupationListExecute, error: getOccupationListError, state: getOccupationState } = useAsync((value: OccupationRequestType) => getOccupationList(value));
 const { execute: getDeptListExecute, error: getDeptListError, state: getDeptListState } = useAsync((value: DeptRequestType) => getDeptList(value));
-const { execute: getDefaultPassExecute, state: getDefaultPassState } = useAsync(getDefaultPass);
 const requestError = computed(() => {
   return addUserError.value || updateUserError.value;
 });
@@ -153,5 +152,5 @@ watch(
   }
 );
 
-await Promise.allSettled([getRoleListExecute({ pageNo: 1, pageSize: 100 }), getOccupationListExecute({ pageNo: 1, pageSize: 100 }), getDeptListExecute({ enabled: true }), getDefaultPassExecute()]);
+await Promise.allSettled([getRoleListExecute({ pageNo: 1, pageSize: 100 }), getOccupationListExecute({ pageNo: 1, pageSize: 100 }), getDeptListExecute({ enabled: true })]);
 </script>

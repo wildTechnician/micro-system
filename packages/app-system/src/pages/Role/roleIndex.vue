@@ -24,7 +24,7 @@
                     {{ roleVal.enabled > 0 ? '启用' : '禁用' }}
                   </template>
                 </el-tag>
-                {{ roleVal.name }}
+                {{ roleVal.label }}
               </el-text>
             </el-col>
             <el-col :span="2">
@@ -70,7 +70,7 @@ const modalData = shallowRef<undefined | RoleResponseType>(undefined);
 const accessData = shallowRef<undefined | RoleResponseType>(undefined);
 const column: ColumnType[] = [
   { label: '姓名', field: 'nickname', width: '150', fixed: 'left' },
-  { label: '部门', field: 'deptName' },
+  { label: '部门', field: 'dept' },
 ];
 
 const initUserData = (): UserRequestType => ({ roleId: '', pageNo: 1, pageSize: 10 });
@@ -82,7 +82,7 @@ const tableHandle = useTable<RoleRequestType, RoleResponseType>({
   requestData: requestUserPage,
   pagination: { pageSize: 10, current: 1, props: { currentKey: 'pageNo' } },
   autoRequest: false,
-  api: 'admin/user/page',
+  api: '/system/user',
 });
 
 const { loading: roleLoading, execute, state, error } = useAsync<RoleRequestType, any>((requestData) => getRoleList(requestData));

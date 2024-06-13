@@ -71,11 +71,10 @@ export type RoleAccessType = {
   roleId: string;
 };
 
-export const getRoleList = (data: RoleRequestType) => post<RoleRequestType, RoleResponseType>('/admin/role/page', data);
+export const getRoleList = (data: RoleRequestType) => post<RoleRequestType, RoleResponseType>('/system/role', data);
 export const addRole = (data: RoleOperateType) => post<RoleOperateType, Server.responseOK>('/admin/role', data);
 export const updateRole = (data: RoleOperateType) => put<RoleOperateType, Server.responseOK>('/admin/role', data);
 export const delRole = (data: string[]) => del<string[], Server.responseOK>('/admin/role', data);
 
 export const getRoleAccess = (data: string) => post<{}, RoleAccessType>(`admin/role/getRolePer?roleId=${data}`, {}, { requestType: 'form' });
 export const setRoleAccess = (data: RoleAccessType) => post<RoleAccessType, Server.responseOK>('admin/role/changePer', data);
-export const getDefaultPass = () => get<{}, Server.responseOK>('/admin/user/defaultPwd', {});

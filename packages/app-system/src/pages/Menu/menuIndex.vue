@@ -62,18 +62,18 @@ import type { ColumnType } from '@packages/utils-common/components/TreeTable';
 const visible = shallowRef<boolean>(false);
 const modalData = shallowRef<MenuResponseType | undefined>(undefined);
 const column: ColumnType[] = [
-  { field: 'name', label: '名称', fixed: true, width: 150, align: 'left' },
+  { field: 'title', label: '名称', fixed: true, width: 150, align: 'left' },
   { slot: 'type', label: '类型', fixed: true, width: 80 },
   { field: 'icon', label: '图标' },
   { field: 'btnPermission', label: '权限标识' },
   { field: 'component', label: '组件路径' },
-  { field: 'routePath', label: '访问地址', width: 250 },
+  { field: 'path', label: '访问地址', width: 250 },
   { slot: 'target', label: '打开方式' },
   { slot: 'cache', label: '缓存页面' },
   { slot: 'hidden', label: '是否隐藏' },
   { slot: 'enabled', label: '状态' },
-  { field: 'lastModifiedTime', label: '更新时间', width: 250 },
-  { field: 'editorNickName', label: '更新人' },
+  { field: 'updateTime', label: '更新时间', width: 250 },
+  { field: 'updateBy', label: '更新人' },
   { label: '操作', slot: 'edit', fixed: 'right', width: 160 },
 ];
 
@@ -84,7 +84,7 @@ const tableHandle = useTable<MenuRequestType, MenuResponseType>({
   requestData: requestPage,
   pagination: { pageSize: 10, current: 1, show: false },
   autoRequest: true,
-  api: '/admin/menu/list',
+  api: '/system/menu',
 });
 
 const { loading, doRequest } = tableHandle;

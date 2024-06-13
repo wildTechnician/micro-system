@@ -41,7 +41,7 @@ export const fromData = [
   {
     name: 'parentId',
     title: '父级',
-    component: [TreeSelect, { placeholder: '请选择父级', nodeKey: 'id', teleported: false, checkStrictly: true, props: { label: 'name' } }],
+    component: [TreeSelect, { placeholder: '请选择父级', nodeKey: 'id', teleported: false, checkStrictly: true, props: { label: 'title' } }],
     decorator: [FormItem, { gridSpan: 'span 2' }],
     initialValue: '0',
   },
