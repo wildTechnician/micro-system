@@ -50,7 +50,9 @@ const uiLoading = useThrottleRender(ref(true), 1000);
   background-color: var(--el-bg-color-page);
   &_header {
     padding: 0 !important;
-    box-shadow: var(--el-box-shadow-lighter);
+    // box-shadow: var(--el-box-shadow-lighter);
+    border-bottom: var(--el-border);
+    border-left: var(--el-border);
   }
 }
 
