@@ -3,7 +3,7 @@ node_modules/
 */node_modules/
 */dist/
 dist/
-*/cesium-playground/
+*/**-playground/
 npm-debug.log*
 pnpm-debug.log*
 yarn-debug.log*

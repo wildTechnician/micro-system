@@ -28,6 +28,6 @@ export default ({ mode }: ConfigEnv) => {
       },
     },
     build: viteBuild(name),
-    server: viteServer(7790, mode, env.VITE_BASE_URL),
+    server: viteServer(7790, mode),
   });
 };
