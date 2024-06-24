@@ -25,25 +25,23 @@ type ResponseData = {
 export const startApp = async (AppPage: Component, router?: Router, store?: Pinia): Promise<ResponseData> => {
   let instance: any;
   const Win: Window = getWindows();
+
   if (isMonorepo) {
     let dispose: any;
 
     Win.__WUJIE_MOUNT = () => {
       dispose = fixElementPlusTeleportCrash();
       instance = createdInstance(AppPage, router, store);
+
+      Win.$wujie?.bus.$on('router-change', (path: string) => {
+        router?.push({ path });
+      });
     };
 
     Win.__WUJIE_UNMOUNT = () => {
       disposeInstance(instance);
       dispose();
     };
-
-    /**
-     * #TODO:父应用传下来的应该统一管理
-     */
-    Win.$wujie?.bus.$on('router-change', (path: string) => {
-      router?.push({ path });
-    });
 
     Win.__WUJIE.mount();
 
