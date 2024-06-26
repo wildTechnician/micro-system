@@ -11,10 +11,6 @@ import type { Component, App } from 'vue';
 import type { Router } from 'vue-router';
 import type { Pinia } from 'Pinia';
 
-type ResponseData = {
-  instance: App;
-};
-
 /**
  * 应用入口
  * @param AppPage
@@ -22,38 +18,38 @@ type ResponseData = {
  * @param store
  * @returns
  */
-export const startApp = async (AppPage: Component, router?: Router, store?: Pinia): Promise<ResponseData> => {
+export const startApp = () => {
   let instance: any;
   const Win: Window = getWindows();
 
-  if (isMonorepo) {
-    let dispose: any;
+  return async (AppPage: Component, router: () => Router, store: () => Pinia): Promise<App> => {
+    if (isMonorepo) {
+      let disposeFixElementPlusTeleportCrash: any;
 
-    Win.__WUJIE_MOUNT = () => {
-      dispose = fixElementPlusTeleportCrash();
-      instance = createdInstance(AppPage, router, store);
+      Win.__WUJIE_MOUNT = () => {
+        instance = createdInstance(AppPage, router(), store());
+        disposeFixElementPlusTeleportCrash = fixElementPlusTeleportCrash();
+        Win.$wujie?.bus.$on('router-change', (path: string) => {
+          router().push({ path });
+        });
+      };
 
-      Win.$wujie?.bus.$on('router-change', (path: string) => {
-        router?.push({ path });
-      });
-    };
+      Win.__WUJIE_UNMOUNT = () => {
+        disposeInstance(instance);
+        disposeFixElementPlusTeleportCrash();
+      };
 
-    Win.__WUJIE_UNMOUNT = () => {
-      disposeInstance(instance);
-      dispose();
-    };
+      Win.__WUJIE.mount();
 
-    Win.__WUJIE.mount();
+      return Promise.resolve(instance);
+    } else if (import.meta.env.MODE !== 'production') {
+      instance = createdInstance(AppPage, router(), store());
 
-    return Promise.resolve({ instance });
-  } else if (import.meta.env.MODE !== 'production') {
-    instance = createdInstance(AppPage, router, store);
-
-    return Promise.resolve({ instance });
-  } else {
-    /**正式环境下不允许独立运行 */
-    return Promise.reject('Unable to load site');
-  }
+      return Promise.resolve(instance);
+    } else {
+      return Promise.reject('Unable to load site');
+    }
+  };
 };
 
 /**

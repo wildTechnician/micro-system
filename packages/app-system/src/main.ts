@@ -6,8 +6,8 @@ import '@/styles/common.scss';
 
 async function setup() {
   try {
-    const init = startApp();
-    await init(
+    const initApp = startApp();
+    await initApp(
       App,
       () => router,
       () => Store
