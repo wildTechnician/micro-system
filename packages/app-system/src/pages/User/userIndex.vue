@@ -1,5 +1,5 @@
 <template>
-  <tree-table-card :table="tableHandle" :column="column" title="用户管理" @add-handle="changeModal" @update-handle="changeModal">
+  <tree-table-card :table="tableHandle" :column="column" title="用户管理" @add-handle="changeModal">
     <template #tableSearch>
       <form-provider :form="forms">
         <form-layout wrapper-align="left" layout="inline">

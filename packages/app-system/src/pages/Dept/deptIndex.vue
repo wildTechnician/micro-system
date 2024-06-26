@@ -9,7 +9,6 @@
       addChild = false;
       changeModal(undefined);
     "
-    @update-handle="changeModal"
   >
     <template #tableSearch>
       <form-provider :form="forms">

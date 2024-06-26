@@ -1,5 +1,5 @@
 <template>
-  <tree-table-card :table="tableHandle" :column="column" title="版本管理" @add-handle="changeModal" @update-handle="changeModal">
+  <tree-table-card :table="tableHandle" :column="column" title="版本管理" @add-handle="changeModal">
     <template #tableTitle>
       <el-tabs v-model="activeTab" style="padding: 5px 20px 0 20px" @tab-change="tableChange">
         <el-tab-pane name="app">
