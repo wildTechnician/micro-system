@@ -26,7 +26,7 @@
                 </el-icon>
                 <span>新增</span></el-button
               >
-              <el-button :icon="RefreshLeft" :loading="table.loading.value || false" title="重新加载" @click.stop="table.doRequest"> </el-button>
+              <el-button :icon="RefreshLeft" :loading="table.loading.value || false" title="重新加载" @click.stop="table.doRequest()"> </el-button>
               <el-button :icon="uploadThree" title="导出"> </el-button>
               <el-popover trigger="click" :teleported="true">
                 <template #reference>
