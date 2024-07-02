@@ -3,7 +3,7 @@ import { initRouter } from '@packages/utils-common/enter';
 import { forbidden } from '@/router/modules/container';
 import { useStorage } from '@packages/utils-common/hook';
 import { loopSearchMenu, formatterUrl } from '@packages/utils-common/utils';
-import { Essential, MenuType } from '@packages/utils-common/enum';
+import { Essential } from '@packages/utils-common/enum';
 import useProfileStore from '@/store/profile';
 
 interface RouterState {
@@ -59,8 +59,8 @@ export default defineStore('permission', {
            * #TODO:如果主页没有返回，目前返回false跳转403页面
            */
           const homeMenu = this.searchHomeMenu(useProfile.Auth.home, routes);
-          if (homeMenu) {
-            setCurrentChildHost(Essential.CURRENT_SYSTEM_HOST, { path: homeMenu.path, name: homeMenu.name });
+          if (homeMenu.length > 0) {
+            setCurrentChildHost(Essential.CURRENT_SYSTEM_HOST, { path: homeMenu[0].path, name: homeMenu[0].name });
           } else {
             /**
              * 设置默认主页
@@ -74,20 +74,15 @@ export default defineStore('permission', {
       }
     },
 
-    searchHomeMenu(condition: any, routes: MenuRoute.Route[]): MenuRoute.Route | undefined {
-      let curSystem: MenuRoute.Route | undefined = undefined;
-      loopSearchMenu(routes, 0, (router) => {
-        // 当前路由的系统
-        if (router.meta.type == MenuType.SYSTEM) curSystem = router;
-
-        if (condition.component == router.component && curSystem) {
-          this.childrenRouters = new Array(curSystem!);
-          this.defaultRouter = { ...curSystem!, path: curSystem!.path + condition.routePath };
+    searchHomeMenu(condition: any, routes: MenuRoute.Route[]): MenuRoute.Route[] {
+      return loopSearchMenu(routes, 0, (router) => {
+        if (condition.component == router.component) {
+          this.childrenRouters = [router];
+          this.defaultRouter = { ...router, path: condition.path + (condition.children && condition.children.length > 0 ? condition.children[0].path : '/') };
           return true;
         }
         return false;
       });
-      return curSystem;
     },
   },
 

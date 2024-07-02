@@ -16,7 +16,6 @@ const router = useRouter();
 const route = useRoute();
 const { set: setCurrentChildHost } = useStorage(sessionStorage);
 
-// 点击跳转
 function changeMenu(index: string, indexPath: string[]) {
   let routerParams: string = '';
   let hasChildSystem: boolean = false;

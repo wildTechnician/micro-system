@@ -159,7 +159,7 @@ export default [
           },
           {
             children: [],
-            component: 'system',
+            component: 'visualizer',
             meta: {
               icon: 'trophy',
               target: true,
