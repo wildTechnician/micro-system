@@ -28,6 +28,9 @@ export const useMonorepo = (handle: any) => {
     } else {
       currentApp.name = usePermission.getDefaultRouter.name;
       currentApp.path = usePermission.getDefaultRouter.path;
+      setTimeout(() => {
+        handle.bus.$emit('router-change', path);
+      }, 0);
     }
   };
 
