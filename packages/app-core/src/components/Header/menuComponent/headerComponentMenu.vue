@@ -1,5 +1,5 @@
 <template>
-  <el-menu mode="horizontal" class="menuStyle" :default-active="routerDefaultActive" menu-trigger="click" @select="changeMenu">
+  <el-menu mode="horizontal" class="menuStyle" :default-active="route.params.path" menu-trigger="click" @select="changeMenu">
     <componentsMenuItem v-for="(ItemData, ItemIndex) in usePermission.allRouters" :key="`ItemData${ItemIndex}`" :items="ItemData"></componentsMenuItem>
   </el-menu>
 </template>
@@ -7,15 +7,13 @@
 <script lang="ts" setup name="headerComponentMenu">
 import usePermissionStore from '../../../store/permission';
 import { componentsMenuItem } from '@packages/utils-common/layout/components';
-import { shallowRef } from 'vue';
 import { useStorage } from '@packages/utils-common/hook';
 import { Essential, MenuType } from '@packages/utils-common/enum';
-import { useRouter } from 'vue-router';
 import { loopSearchMenu } from '@packages/utils-common/utils';
 
 const usePermission = usePermissionStore();
 const router = useRouter();
-const routerDefaultActive = shallowRef<string>();
+const route = useRoute();
 const { set: setCurrentChildHost } = useStorage(sessionStorage);
 
 // 点击跳转
